@@ -1,0 +1,18 @@
+.header{
+    background-color: #000000;
+    color: white;
+    /* width: 100vw; */
+
+    min-height: 9vh;
+    margin: 0;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(67, 67, 67, 0.5);
+    /* border-bottom: 1px solid #525252; */
+}
