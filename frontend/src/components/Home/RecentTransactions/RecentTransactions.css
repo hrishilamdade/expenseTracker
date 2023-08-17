@@ -1,0 +1,13 @@
+.recent-trans{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    flex-grow: 1;
+    min-height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 20px;
+    padding: 20px 0px;
+    background-color: #0d1117; 
+    border-radius: 10px;
+}
