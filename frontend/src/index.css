@@ -15,6 +15,11 @@ code {
     monospace;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 .pl-6{
   padding-left: 6px;
 }
@@ -22,4 +27,52 @@ code {
 .px-4{
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.color-red{
+  color: red !important;
+}
+
+.color-green{
+  color: rgb(23, 212, 23) !important;
+}
+
+.color-white{
+  color: white !important;
+}
+
+.bg-blue{
+  background-color: #247cff !important;
+}
+
+.font-sm{
+  font-size: 0.8rem;
+}
+
+.font-md{
+  font-size: 1.2rem;
+}
+
+.font-lg{
+  font-size: 1.5rem;
+}
+
+.transit-slow{
+  transition: all 0.5s ease-in-out !important;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }

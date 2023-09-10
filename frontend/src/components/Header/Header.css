@@ -16,3 +16,14 @@
     box-shadow: 0 0 10px rgba(67, 67, 67, 0.5);
     /* border-bottom: 1px solid #525252; */
 }
+
+.header__title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+.header__title:hover{
+    cursor: pointer;
+}
