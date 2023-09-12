@@ -1,19 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const routes = require('./routes/routes');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 
-// Import Routes
 
 // Middlewares
 app.use(cors());
-
 app.use(bodyParser.json());
 
-// Routes Middlewares
-// app.use('/posts', postsRoute);
+// Routes
+app.use('/api', routes);
+
 
 // Connect to DB
 // mongoose.connect(
@@ -23,4 +24,6 @@ app.use(bodyParser.json());
 // );
 
 // How to we start listening to the server
-app.listen(3000,()=>  console.log('Server Up and running'));
+console.log(process.env.APP_NAME)
+console.log(process.env.DATABASE_URL)
+app.listen(process.env.BACKEND_PORT,()=>  console.log('Backend server started listening on http://localhost:'+process.env.BACKEND_PORT ));
