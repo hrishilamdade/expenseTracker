@@ -23,7 +23,11 @@ router.get('/', (req, res) => {
 
 router.get('/transactions', async (req,res)=>{
     try{
-        const data = await Model.find();
+        let data = await Model.find();
+        // const result = data.map((item)=> ({
+        //     ...data, "date":item["date"].toDateString()
+        // }))
+        // console.log(result);
         res.send(data);
     }
     catch(error){
