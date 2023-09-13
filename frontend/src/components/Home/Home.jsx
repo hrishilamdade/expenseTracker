@@ -52,12 +52,12 @@ function Home() {
         >
           <DialogTitle id="modal-modal-title">Add New Transaction</DialogTitle>
           <DialogContent dividers>
-            <AddNewTransaction/>
+            <AddNewTransaction handleClose={handleClose} />
           </DialogContent>
-          <DialogActions>
+          {/* <DialogActions>
             <button onClick={handleClose} className='cancel' >Cancel</button>
             <button onClick={handleClose} className='add' >Add</button>
-          </DialogActions>
+          </DialogActions> */}
 
         </Dialog>
     </div>

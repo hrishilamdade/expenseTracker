@@ -76,3 +76,40 @@ input[type=number] {
 input::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
+
+button{
+  border: none !important;
+  margin: 10px 20px;
+  padding: 8px 20px ;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+button:hover{
+  cursor: pointer;
+}
+
+.cancel{
+  background-color: #1d293a !important;
+  color: white !important;
+  border: 1px solid white !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.cancel:hover{
+  /* background-color: #fd5353 !important; */
+  border: 1px solid #fd5353 !important;
+  color: #fd5353 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.add{
+  background-color: #247cff !important;
+  color: white !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.add:hover{
+  background-color: rgb(12, 83, 181) !important;
+  color: white !important;
+  transition: all 0.2s ease-in-out !important;
+}

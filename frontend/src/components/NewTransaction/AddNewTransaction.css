@@ -25,6 +25,31 @@
     width: 100%;
 }
 
+.new_transact__body__wrapper__select{
+    color: white;
+    font-size: 1.2rem !important ;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 25px 0px;
+    padding: 10px;
+    background-color: #111a28;
+    cursor: pointer !important;
+    border: none;
+    outline: none;
+    outline-width: none;
+}
+
+.new_transact__body__wrapper__select__option{
+    color: white;
+    background-color: #104087;
+    padding: 10px;
+    height: 20px;
+}
+.new_transact__body__wrapper__select__option:hover{
+    background-color: #247cff;
+    cursor: pointer !important;
+}
 
 input{
     font-size: 1.2rem;
@@ -43,4 +68,15 @@ input:focus{
     outline: none;
     border: 2px solid #247cff;
     background-color: #161c25;
+}
+
+.MuiSelect-root{
+    color: white !important;
+    border : 2px solid #ffffff !important;
+    background-color: #111a28 !important;
+}
+
+.MuiSelect-select
+{
+    color: white !important;
 }
