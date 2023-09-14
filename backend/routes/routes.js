@@ -6,7 +6,8 @@ require('dotenv').config();
 const router = express.Router();
 
 //Import models
-const Model = require('../models/model')
+const TransactionModel = require('../models/transaction')
+const AccountModel = require('../models/account')
 
 // connect to database
 mongoose.connect(process.env.DATABASE_URL);
@@ -21,9 +22,10 @@ router.get('/', (req, res) => {
 }
 );
 
+// get all transactions
 router.get('/transactions', async (req,res)=>{
     try{
-        let data = await Model.find();
+        let data = await TransactionModel.find();
         // const result = data.map((item)=> ({
         //     ...data, "date":item["date"].toDateString()
         // }))
@@ -38,7 +40,7 @@ router.get('/transactions', async (req,res)=>{
 
 router.post('/transactions', async (req, res) => {
     // console.log(req.body);
-    const data = new Model(req.body);
+    const data = new TransactionModel(req.body);
 
     try{
         const transaction = await data.save();
@@ -50,6 +52,30 @@ router.post('/transactions', async (req, res) => {
     
 }
 );
+
+router.get('/accounts', async (req,res)=>{
+    try{
+        let data = await AccountModel.find();
+        res.send(data);
+    }
+    catch(error){
+        res.status(500).send({message:error.message});
+    }
+    
+})
+
+router.post('/accounts', async (req, res) => {
+    // console.log(req.body);
+    const data = new AccountModel(req.body);
+
+    try{
+        const account = await data.save();
+        res.status(201).send(account);
+    }
+    catch(error){
+        res.status(400).send({message:error.message});
+    }
+});
 
 
 module.exports = router;
