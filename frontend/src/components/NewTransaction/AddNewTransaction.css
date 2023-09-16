@@ -30,22 +30,33 @@
     font-size: 1.2rem !important ;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 47%;
     margin: 25px 0px;
     padding: 10px;
     background-color: #111a28;
     cursor: pointer !important;
     border: none;
+    border-radius: 5px;
     outline: none;
     outline-width: none;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.new_transact__body__wrapper__select:focus{
+    outline: none;
+    border: 2px solid #247cff;
+    background-color: #161c25;
 }
 
 .new_transact__body__wrapper__select__option{
     color: white;
     background-color: #104087;
+    border-radius: 10px;
     padding: 10px;
     height: 20px;
 }
+
 .new_transact__body__wrapper__select__option:hover{
     background-color: #247cff;
     cursor: pointer !important;

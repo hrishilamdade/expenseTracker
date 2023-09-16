@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Auth/Login/Login';
 import AddNewTransaction from './components/NewTransaction/AddNewTransaction';
+import AccountsPage from './components/Accounts/AccountsPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" exact element={<Home/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/new_transaction" element={<AddNewTransaction/>} />
+          <Route path="/accounts" element={<AccountsPage/>} />
         </Routes>
       </Router>
 

@@ -5,12 +5,22 @@ import RecentTransactions from './RecentTransactions/RecentTransactions'
 import AddIcon from '@mui/icons-material/Add';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Modal } from '@mui/material';
 import AddNewTransaction from '../NewTransaction/AddNewTransaction'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { getAllTransactions } from '../../services/transactions';
 
 function Home() {
   const [showAddNewTransac, setShowAddNewTransac] = useState(false);
   const [open, setOpen] = React.useState(false);
-
+  const [transactions,setTransactions] = useState([]);
+  
+  const getTransactions = () => {
+    getAllTransactions().then((res)=>{
+      console.log(res.data);
+      setTransactions(res.data);
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -25,7 +35,7 @@ function Home() {
   return (
     <div className='home'>
         <Accounts/>
-        <RecentTransactions/>
+        <RecentTransactions transactions={transactions} setTransactions={setTransactions} />
         <div className='add_new_transaction transit-slow'>
           {/* <Link to='/new_transaction'> */}
             <IconButton 
@@ -52,7 +62,7 @@ function Home() {
         >
           <DialogTitle id="modal-modal-title">Add New Transaction</DialogTitle>
           <DialogContent dividers>
-            <AddNewTransaction handleClose={handleClose} />
+            <AddNewTransaction handleClose={handleClose} getTransactions={getTransactions} />
           </DialogContent>
           {/* <DialogActions>
             <button onClick={handleClose} className='cancel' >Cancel</button>

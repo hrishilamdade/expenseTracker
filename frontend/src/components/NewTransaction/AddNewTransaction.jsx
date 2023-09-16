@@ -5,7 +5,7 @@ import { addTransaction } from '../../services/transactions';
 
 
 
-function AddNewTransaction({handleClose}) {
+function AddNewTransaction({handleClose,getTransactions}) {
   const [title,setTitle] = useState("")
   const [date,setDate] = useState("");
   const [amount,setAmount] = useState(0);
@@ -18,8 +18,9 @@ function AddNewTransaction({handleClose}) {
   console.log(date);
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTransaction({title,date,amount}).then((res)=>{
+    addTransaction({title,date,amount,type}).then((res)=>{
       console.log(res.data);
+      getTransactions();
     }).catch((err)=>{
       console.log(err);
     })
@@ -36,12 +37,12 @@ function AddNewTransaction({handleClose}) {
         </div>
         <div className='new_transact__body__wrapper'>
           {/* <label htmlFor="type">Type</label> */}
-          {/* <select name="type" id="type" value={type} onChange={handleChange} className='new_transact__body__wrapper__select' >
+          <select name="type" id="type" value={type} onChange={handleChange} className='new_transact__body__wrapper__select' >
             <option value="" disabled selected hidden>Type</option>
             <option value="debit" className='new_transact__body__wrapper__select__option'>Debit</option>
             <option value="credit" className='new_transact__body__wrapper__select__option' >Credit</option>
-          </select> */}
-          <FormControl fullWidth>
+          </select>
+          {/* <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Type</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -53,7 +54,7 @@ function AddNewTransaction({handleClose}) {
               <MenuItem value={'debit'}>Debit</MenuItem>
               <MenuItem value={'credit'}>Crerdit</MenuItem>
             </Select>
-          </FormControl>
+          </FormControl> */}
           
         </div>
         <div className='new_transact__body__bottom' >

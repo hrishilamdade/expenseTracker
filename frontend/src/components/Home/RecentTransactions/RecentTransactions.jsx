@@ -4,12 +4,12 @@ import Transaction from './Transaction'
 import { getAllTransactions } from '../../../services/transactions';
 import { CircularProgress } from '@mui/material';
 
-function RecentTransactions() {
+function RecentTransactions({transactions,setTransactions}) {
   // const [transactions, setTransactions] = useState([{date: '2023/08/01', description: 'test', amount: 10000,type:'credit'}
   // ,{date: '2023/08/04', description: 'Bought a car', amount: 400000,type:'debit'}
   // ,{date: '2021/08/01', description: 'Paid Rent', amount: 15000,type:'debit'}
   // ,{date: '2021/08/11', description: 'Maid', amount: 5000,type:'debit'}]);
-  const [transactions,setTransactions] = useState([]);
+  
   const [isLoading,setIsLoading] = useState(true);
 
   useEffect(()=>{
